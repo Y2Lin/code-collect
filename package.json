@@ -1,0 +1,22 @@
+{
+  "name": "code-collect",
+  "version": "1.0.0",
+  "description": "代码片段收藏",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuanlinssdut/code-collect.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yuanlinssdut/code-collect/issues"
+  },
+  "homepage": "https://github.com/yuanlinssdut/code-collect#readme",
+  "dependencies": {
+    "minireset.css": "0.0.2"
+  }
+}

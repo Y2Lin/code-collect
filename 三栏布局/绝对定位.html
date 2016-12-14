@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <title>绝对定位</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="../node_modules/minireset.css/minireset.min.css">
+  <style type="text/css">
+    body,
+    html {
+      height: 100%;
+      padding: 0px;
+      margin: 0px;
+    }
+    
+    .left,
+    .right {
+      position: absolute;
+      top: 0px;
+      background: red;
+      height: 100%;
+    }
+    
+    .left {
+      left: 0;
+      width: 100px;
+    }
+    
+    .right {
+      right: 0px;
+      width: 200px;
+    }
+    
+    .main {
+      margin: 0px 200px 0px 100px;
+      height: 100%;
+      background: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <!--左右两栏固定 中间自适应-->
+  <div class="main">Main</div>
+  <div class="left">Left</div>
+  <div class="right">Right</div>
+</body>
+
+</html>
