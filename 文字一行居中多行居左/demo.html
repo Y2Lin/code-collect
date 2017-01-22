@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>一行时文字居中，多行时文字居左</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, minimal-ui, shrink-to-fit=no">
+  <style>
+body {
+	font-size: 16px;
+	font-family: Arial,Roboto,Droid Sans,Hiragino Sans GB,Microsoft YaHei,Simsun,STXihei,"sans-serif";
+}
+.ps {
+  text-align: center;
+}
+.ps span {
+  display: inline-block;
+  text-align: left;
+  /* background-color: #f00; */
+}
+
+.flex {
+  text-align: center;
+}
+.flex span {
+  display: inline-flex;
+  text-align: left;
+  /* background-color: #f00; */
+}
+
+.table {
+  margin: 0 auto;
+}
+.table td {
+  text-align: left;
+  /* background-color: #f00; */
+}
+
+.tab-cell {
+  display:table;
+  margin: 0 auto;
+  text-align: left;
+  /* background-color: #f00; */
+}
+
+.fc {
+  float: left;
+  position: relative;
+  left: 50%;
+}
+.fc span {
+  float: left;
+  position: relative;
+  left: -50%;
+  /* background-color: #f00; */
+}
+</style>
+</head>
+
+<body>
+  <p class="ps"><span>文字文文字文字文字文字</span></p>
+  <p class="ps"><span>文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字</span></p>
+
+
+  <hr>
+  <div class="flex"><span>文字文文字文字文字文字</span></div>
+  <br>
+  <div class="flex"><span>文字文文字文字文字文字文字文文字文字文字文字文字文文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字</span></div>
+
+  <hr>
+  <table class="table">
+    <tr>
+      <td>文字文文字文字文字文字</td>
+    </tr>
+  </table>
+  <table class="table">
+    <tr>
+      <td>文字文文字文字文字文字文字文文字文字文字文字文字文文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字</td>
+    </tr>
+  </table>
+
+  <hr>
+  <p class="tab-cell">文字文文字文字文字文字</p>
+  <br>
+  <p class="tab-cell">文字文文字文字文字文字文字文文字文字文字文字文字文文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字</p>
+
+  <hr>
+  <p class="fc"><span>文字文文字文字文字文字</span></p>
+  <br clear="both">
+  <p class="fc"><span>文字文文字文字文字文字文字文文字文字文字文字文字文文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字</span></p>
+</body>
+
+</html>
