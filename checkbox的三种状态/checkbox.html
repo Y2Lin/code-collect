@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+</head>
+
+<body>
+  <input id="c1" type="checkbox" name="" value="">
+  <input id="c2" type="checkbox" name="" value="" checked>
+  <input id="c3" type="checkbox" name="" value="">
+</body>
+<script>
+  // 无法在HTML中设置checkbox的状态为indeterminate
+  $("#c3").prop("indeterminate", true);
+  // 两个同时存在 表现为 indeterminate 
+  $("#c3").prop("checked", true);
+</script>
+</html>
