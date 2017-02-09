@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>手机布局</title>
+</head>
+<link rel="stylesheet" type="text/css" href="../node_modules/minireset.css/minireset.min.css">
+<style type="text/css">
+  .page {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .head {
+    height: 40px;
+    width: 100%;
+    text-align: center;
+    line-height: 40px;
+    position: absolute;
+    border: 1px solid black;
+  }
+  
+  .content {
+    position: absolute;
+    overflow: auto;
+    top: 40px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 1px solid blue;
+  }
+  
+  .inner {
+    height: 1000px;
+  }
+</style>
+
+<body>
+  <div class="page">
+    <header class="head">
+      我是header
+    </header>
+    <div class="content">
+      <div class="inner">
+        我是内容
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
