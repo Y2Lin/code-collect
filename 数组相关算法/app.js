@@ -22,7 +22,7 @@ var min = {
 }
 indexArr.reverse().forEach(function (name) { // 倒置 保证后面替代前面的
   var num = obj[name];
-  if (min.num > num || min.num == num) {
+  if (min.num >= num) {
     min.name = name;
     min.num = num;
   }
