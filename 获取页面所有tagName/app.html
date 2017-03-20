@@ -11,22 +11,34 @@
 <body>
   <div class="main">Main</div>
   <span class="left">Left</span>
-  <img class="right"/>
+  <img class="right" />
   <div></div>
-  <span class="left">Left</span>  
+  <span class="left">Left</span>
 </body>
 
 </html>
 <script type="text/javascript">
-  var arr = [];
-  window.onload = function(){
+  window.onload = function () {
+    // 方法1
+    var arr1 = [];
     var nodeList = document.querySelectorAll("*");
-    nodeList.forEach(function(item){
+    nodeList.forEach(function (item) {
       var tagName = item.tagName;
-      if(arr.indexOf(tagName)==-1){
-        arr.push(tagName);
+      if (arr1.indexOf(tagName) == -1) {
+        arr1.push(tagName);
       }
     });
-    console.log(arr);
+    console.log(arr1);
+    // 方法2
+    var arr2 = [];
+    var HtmlCollection = document.getElementsByTagName('*');
+    // 也可以将其转化成真正的数组
+    Array.prototype.forEach.call(HtmlCollection, function (item) {
+      var tagName = item.tagName;
+      if (arr2.indexOf(tagName) == -1) {
+        arr2.push(tagName);
+      }
+    });
+    console.log(arr2);
   }
 </script>
