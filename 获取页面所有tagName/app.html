@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <title>getAllTagName</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+  <div class="main">Main</div>
+  <span class="left">Left</span>
+  <img class="right"/>
+</body>
+
+</html>
+<script type="text/javascript">
+  // document.querySelectorAll("*")
+  var arr = [];
+  window.onload = function(){
+    var nodeList = document.querySelectorAll("*");
+    nodeList.forEach(function(item){
+      arr.push(item.tagName);
+    });
+    console.log(arr);
+  }
+</script>
