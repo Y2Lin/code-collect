@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <button id="btn" type="">测试按钮</button>
+</body>
+<script>
+  var btn = document.getElementById('btn');
+  function handler1() {
+    alert("1");
+  }
+  function handler2() {
+    alert("2");
+  }
+  btn.addEventListener("click", handler1, false);
+  btn.addEventListener("click", handler1, true);
+  btn.addEventListener("click", handler2, false);
+  // btn.removeEventListener("click", handler1, false);
+  // falase表示该事件会在冒泡阶段被触发，会按照添加的顺序触发
+  // 通过addEventListener添加的方法只能用 removeEventListener来移除 移除时传入参数需与绑定时相同
+  // 这意味着，如果第二个参数是匿名函数，则该事件无法被移除
+  // 事件捕获阶段 => 处于目标阶段 => 事件冒泡阶段
+</script>
+
+</html>
