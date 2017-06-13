@@ -25,6 +25,16 @@
         display: inline-block;
         background-color: rebeccapurple
       }
+      .box-3{
+        width: 20%;
+        overflow: hidden;
+        background-color: rebeccapurple
+      }
+      .box-3::after{
+        content: '';
+        display: block;
+        padding-top: 100%;
+      }
     </style>
   </head>
   <body>
@@ -33,6 +43,9 @@
       <br/>
       <br/>
       <div class="box-2"></div>
+      <br/>
+      <br/>
+      <div class="box-3"></div>
     </div>
   </body>
 </html>

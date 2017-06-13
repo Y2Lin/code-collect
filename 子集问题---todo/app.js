@@ -13,16 +13,16 @@ var num = [1, 2, 3, 4,]
 // 嵌套循环改为递归
 // level 为循环嵌套层数
 
-function pickOne(arr, level) {
-  if (level === 0) {
-    return arr;
-  } else {
-    for (var i = 0; i < num.length; i++) {
-      
+function pickOne(level, prevArr) {
+  for (var i = 0; i < num.length; i++) {
+    if (level === 0) {
+      // return arr;
+    } else {
+
     }
     console.log(arr.length);
-    return pickOne(arr, level - 1)
+    return pickOne(level - 1, prevArr)
   }
 }
 
-console.log(pickOne(new Array(calNum(3, num.length)), 3))
+console.log(pickOne(3, num))
