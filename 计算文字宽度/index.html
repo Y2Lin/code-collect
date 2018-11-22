@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+  <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style>
+  body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+  }
+  .content{
+    border: 1px solid blue;
+    width: 800px;
+    min-height: 100px;
+    padding: 30px 45px;
+  }
+  #showText{
+    display: inline-block;
+  }
+</style>
+<body>
+  <div class="content">
+    <form>
+      <div class="form-group">
+        <label for="exampleInputEmail1">我需要测出文字的宽度</label>
+        <input type="email" class="form-control" id="input" placeholder="">
+        <br>
+        <div id="showText"></div>
+        <canvas id="myCanvas"></canvas>
+        <br>
+        <div id="txtWidth"></div>
+      </div>
+    </form>
+  </div>
+</body>
+<script>
+$(document).ready(()=>{
+  let $input = $('#input')
+  let $showText = $('#showText')
+  let $txtWidth = $('#txtWidth')
+  $input.on('input',()=>{
+    let newVal = $input.val()
+  })
+
+
+  // canvas 计算文字宽度
+  function getWidthByCanvas(){
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.font = "30px Arial";
+    var txt = "Hello World"
+    ctx.fillText("width:" + ctx.measureText(txt).width, 10, 50)
+    ctx.fillText(txt, 10, 100);
+  }
+  // getComputedStyle 计算宽度
+  function getWidthByStyle($target){
+    return window.getComputedStyle($target).width
+  }
+})
+</script>
+</html>
