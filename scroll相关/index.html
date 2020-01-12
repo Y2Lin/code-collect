@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <style>
+    .wrapper {
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .scroll-box {
+      height: 200px;
+      width: 400px;
+      padding: 6px 8px;
+      border: 1px solid #5c5c5c;
+      overflow: auto;
+    }
+
+    .scroll-box div {
+      line-height: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="scroll-box" id="sbox1">
+    </div>
+    <div class="scroll-box" id="sbox2">
+    </div>
+  </div>
+  <div class="wrapper">
+    <button id="btn-1">scroll 1</button>
+    <button id="btn-2">scroll 2</button>
+  </div>
+</body>
+<script>
+  $(document).ready(function() {
+    function color16() {//十六进制颜色随机
+      var r = Math.floor(Math.random() * 256);
+      var g = Math.floor(Math.random() * 256);
+      var b = Math.floor(Math.random() * 256);
+      var color = '#' + r.toString(16) + g.toString(16) + b.toString(16);
+      return color;
+    }
+
+    function getScrollItems(count) {
+      let retArr = (new Array(count)).fill(null)
+      return retArr.map((item, index) => {
+        return `<div style="color:${color16()}">这是第 ${index} 条记录</div>`
+      })
+    }
+    $('#sbox1').append(getScrollItems(80000))
+    $('#sbox2').append(getScrollItems(80000))
+    // 事件绑定区域
+    $("#btn-1").click(() => {
+      let $box = $('#sbox1')[0]
+      console.time('box1');
+      $box.scroll({
+        top: 2000000,
+        left: 100,
+        behavior: 'smooth'
+      })
+      console.timeLog('box1');
+      console.log('box1', $box.scrollHeight, $box.scrollTop)
+      console.timeEnd('box1')
+    })
+    $("#btn-2").click(() => {
+      let $box = $('#sbox2')[0]
+      console.time('box2');
+      $box.scroll({
+        top: 2000000,
+        left: 100,
+      })
+      console.timeLog('box2');
+      console.log('box2', $box.scrollHeight, $box.scrollTop)
+      console.timeEnd('box2')
+    })
+  })
+</script>
+
+</html>
